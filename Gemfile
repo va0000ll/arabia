@@ -5,6 +5,7 @@ ruby '2.6.5'
 
 gem 'bootstrap', '~> 4.5.2'
 gem 'jquery-rails', '~> 4.3'
+gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
