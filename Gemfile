@@ -4,9 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 
 gem 'bootstrap', '~> 4.5.2'
-gem 'jquery-rails', '~> 4.3'
+gem 'jquery-rails'
 gem 'simple_form'
 gem 'devise'
+gem 'gravatarify', '~> 3.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
