@@ -1,22 +1,20 @@
-<div class="container">
-    <div class="row">
+ 
+<div class="row flex-row-reverse">
 
-        <div class="col">
-            <%= gravatar_tag @user.email, size: 500, :html => {:class => 'img-fluid'} %>
+    <div class="col">
+        <%= gravatar_tag @user.email, size: 500, :html => {:class => 'img-fluid'} %>
+    </div>
+
+    <div class="col">
+        <div class="jumbtron-fluid">
+            <h1 class="display-3"><%= @user.username %></h1>
+            <p class="lead">المتابعون: X | المتابعون: X</p>
+            <p><%= @user.age %></p>
+            <p><%= @user.gender %></p>
+            <hr class="my-3">
+            <h1 class="lead"><%= @user.bio %></h1>
+            <p class="lead">-----------</p>
         </div>
-
-        <div class="col">
-            <div class="jumbtron-fluid">
-                <h1 class="display-3"><%= @user.username %></h1>
-                <p class="lead">المتابعون: X | المتابعون: X</p>
-                <p><%= @user.age %></p>
-                <p><%= @user.gender %></p>
-                <hr class="my-3">
-                <h1 class="lead"><%= @user.bio %></h1>
-                <p class="lead">-----------</p>
-            </div>
-        </div>
-
     </div>
 
 </div>

@@ -18,4 +18,21 @@
 
 body {
   padding-top: 70px;
+  direction: rtl;
+}
+.timeline-centered,
+.card,
+.jumbotron-fluid,
+.checkbox,
+.alert,
+input,
+textarea {
+  direction: rtl;
+}
+.btn-group {
+  direction: ltr;
+}
+body,
+.dropdown-item {
+  text-align: right;
 }
