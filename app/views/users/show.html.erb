@@ -10,13 +10,13 @@
             <h1 class="display-3">
                 <%= @user.username %>
                 <div class="btn btn-group">
-                  <%= render 'follow_button', locals: {user: @user} %>
+                  <%= render 'follow_button', user: @user %>
                 </div>
             </h1>
             <p class="lead">
-            <%= link 'المتابِعون', followers_user_path %>: <%= @user.followers.count %>
+            <%= link_to 'المتابِعون', followers_user_path %>: <%= @user.followers.count %>
             |
-            <%= link 'المتابَعون', following_user_path %>: <%= @user.following.count %>
+            <%= link_to 'المتابَعون', following_user_path %>: <%= @user.following.count %>
             </p>
             <p><%= @user.age %></p>
             <p><%= @user.gender %></p>

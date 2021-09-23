@@ -5,6 +5,8 @@ class RelationshipsController < ApplicationController
     user = User.find(params[:followed_id])
     current_user.follow(user)
     redirect_back fallback_location: root_path
+  # rescue StandardError => e
+  #   Logger.debug e
   end
 
   def destroy

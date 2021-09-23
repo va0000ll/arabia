@@ -14,11 +14,11 @@ class User < ApplicationRecord
   validates_uniqueness_of :username
 
   def follow(user)
-    active_relationships.create(follower_id: user.id)
+    active_relationships.create!(followed_id: user.id)
   end
 
   def unfollow(user)
-    massive_relationships.find_by_followed_id(user.id).destroy
+    active_relationships.find_by_followed_id(user.id).destroy
   end
 
   def following?(user)
