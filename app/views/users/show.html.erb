@@ -1,7 +1,7 @@
  
-<div class="row flex-row-reverse">
+<div class="row">
 
-    <div class="col">
+    <div class="col-md-3">
         <%= gravatar_tag @user.email, size: 500, :html => {:class => 'img-fluid'} %>
     </div>
 
@@ -18,11 +18,10 @@
             |
             <%= link_to 'المتابَعون', following_user_path %>: <%= @user.following.count %>
             </p>
-            <p><%= @user.age %></p>
-            <p><%= @user.gender %></p>
+            <p>العمل: <%= @user.age %></p>
+            <p>الجنس: <%= @user.gender %></p>
             <hr class="my-3">
             <h1 class="lead"><%= @user.bio %></h1>
-            <p class="lead">-----------</p>
         </div>
     </div>
 
