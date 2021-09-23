@@ -236,7 +236,7 @@ DEPENDENCIES
   gravatarify (~> 3.0.0)
   jbuilder (~> 2.7)
   jquery-rails
-  public_activity
+  public_activity (~> 1.5)
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.2)
   sass-rails (>= 6)
