@@ -13,6 +13,8 @@ class UsersController < ApplicationController
 
   def show
     @activities = PublicActivity::Activity.where(owner: @user).or(PublicActivity::Activity.where(recipient: @user)).distinct.order(created_at: :desc)
+
+    @tweet = Tweet.new
   end
 
   def followers
