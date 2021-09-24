@@ -170,12 +170,13 @@ img {
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-time {
   position: absolute;
-  left: -100px;
   text-align: right;
-  padding: 10px;
+  padding: 0 10px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  white-space: nowrap;
+
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-time > span {
@@ -200,6 +201,7 @@ img {
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
+  position: relative;
   background: #fff;
   color: #737881;
   display: block;

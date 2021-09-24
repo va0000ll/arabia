@@ -21,11 +21,21 @@
                     <div class="timeline-label tweet-<%= activity.trackable.id %>">
                         <h2><%= link_to activity.owner.username, user_path(activity.owner.username) %></h2>
                         <p>
-                        <% if activity.trackable_type == 'Tweet' || activity.key == 'tweet.created' %>
-                          <%= raw(activity.trackable.content_html) %>
-                        <% end %>
-                        <% if activity.trackable_type == 'Relationship' %>
-                          <%= render partial: 'public_activity/relationship/created', locals: {activity: activity} %>
+                        <% case activity.trackable_type when 'Tweet' %>
+                            <% case activity.key when 'tweet.created' %>
+                                <%= raw(activity.trackable.content_html) %>
+                                <%= render 'tweets/like_and_dislike_button', tweet: activity.trackable %>
+                            <% when 'tweet.like' %>
+                            <%= link_to activity.owner.username, user_path(activity.owner) %>
+                            <span>أعجبته تغريدة</span>
+                            <% when 'tweet.dislike' %>
+                            <%= link_to activity.owner.username, user_path(activity.owner) %>
+                            <span>لم تعجبه تغريدة</span>
+                            <% end %>
+                        <% when 'Relationship' %>
+                            <%= link_to activity.owner.username, user_path(activity.owner.username) %>
+                            <span>تابع</span>
+                            <%= link_to activity.recipient.username, user_path(activity.recipient.username) %>
                         <% end %>
                         </p>
                     </div>
