@@ -14,9 +14,9 @@
             <% if activity.trackable %>
             <article class="timeline-entry">
                 <div class="timeline-entry-inner">
-                    <time class="timeline-time" datetime="<%= activity.created_at %>"><span>03:45 AM</span> <span>Today</span></time>
                     <div class="timeline-icon">
                        <%= gravatar_tag activity.owner.email, size: 40, html: { class: 'img-circle' } %>
+                       <%= content_tag :time, '', class: 'timeago timeline-time', datetime: activity.created_at.localtime %>
                     </div>
                     <div class="timeline-label tweet-<%= activity.trackable.id %>">
                         <h2><%= link_to activity.owner.username, user_path(activity.owner.username) %></h2>
