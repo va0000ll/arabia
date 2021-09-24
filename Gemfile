@@ -35,6 +35,7 @@ gem 'bcrypt'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem "public_activity", "~> 1.5"
+gem "acts_as_votable", "~> 0.11.0"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

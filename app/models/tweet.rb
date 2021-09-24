@@ -1,6 +1,8 @@
 class Tweet < ApplicationRecord
   include PublicActivity::Model
 
+  acts_as_votable
+
   belongs_to :user
 
   validates_presence_of :content
