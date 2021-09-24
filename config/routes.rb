@@ -19,4 +19,5 @@ Rails.application.routes.draw do
 
   resources :tweets, only: %i[create edit update destroy]
   resources :likes, only: %i[create destroy], param: 'likeable_id'
+  resources :comments, only: %i[create destroy]
 end

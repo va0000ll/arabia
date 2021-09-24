@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :followers, through: :massive_relationships, source: :follower
 
   has_many :tweets, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates_presence_of :username
   validates_uniqueness_of :username
