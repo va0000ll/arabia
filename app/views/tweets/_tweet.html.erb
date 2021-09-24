@@ -10,5 +10,8 @@
         <%= link_to 'حذف', tweet_path(tweet), method: :delete, class: "btn btn-sm btn-danger" %>
         <% end %>
     </div>
-    <div class="card-body"><%= raw(tweet.content_html) %></div>
+    <div class="card-body">
+        <%= raw(tweet.content_html) %>
+        <%= render 'tweets/like_and_dislike_button', tweet: tweet %>
+    </div>
 </div>
