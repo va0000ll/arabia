@@ -1,2 +1,38 @@
-<h1>Pages#timeline</h1>
-<p>Find me in app/views/pages/timeline.html.erb</p>
+<div class="row">
+  <div class="col">
+    <div class="jumbotron-fluid text-center">
+      <h1 class="mb-3">الحائط</h1>
+      <hr class="my-3" />
+    </div>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="timeline-centered">
+          <% @activities.each do |activity| %>
+            <% if activity.trackable %>
+            <article class="timeline-entry">
+                <div class="timeline-entry-inner">
+                    <time class="timeline-time" datetime="<%= activity.created_at %>"><span>03:45 AM</span> <span>Today</span></time>
+                    <div class="timeline-icon">
+                       <%= gravatar_tag activity.owner.email, size: 40, html: { class: 'img-circle' } %>
+                    </div>
+                    <div class="timeline-label tweet-<%= activity.trackable.id %>">
+                        <h2><%= link_to activity.owner.username, user_path(activity.owner.username) %></h2>
+                        <p>
+                        <% if activity.trackable_type == 'Tweet' || activity.key == 'tweet.created' %>
+                          <%= raw(activity.trackable.content_html) %>
+                        <% end %>
+                        <% if activity.trackable_type == 'Relationship' %>
+                          <%= render partial: 'public_activity/relationship/created', locals: {activity: activity} %>
+                        <% end %>
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <% end %>
+          <% end %>
+        </div>
+    </div>
+</div>

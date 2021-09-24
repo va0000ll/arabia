@@ -13,15 +13,15 @@
         
         <%= link_to root_path, class: 'nav-link' do %>
           <%= content_tag :span, 'الرئيسية' %>
-          
         <% end %>
 
         <%= link_to tweeters_path, class: 'nav-link' do %>
           <%= content_tag :span, 'المغردون' %>
         <% end %>
 
-        <%# <%= render 'layouts/notifications' %>
-     
+        <%= link_to root_path, class: 'nav-link' do %>
+          <%= content_tag :span, 'الحائط' %>
+        <% end %>
       <% end %>
     </ul>
     <ul class="navbar-nav d-flex flex-row-reverse ">

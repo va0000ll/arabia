@@ -6,7 +6,7 @@
         <% if user_signed_in? && current_user == @user %>
         <%= link_to 'تعديل', edit_tweet_path(tweet), class: "btn btn-sm btn-primary" %>
         <span>|</span>
-        <%= link_to 'حذف', destroy_tweet_path(tweet), method: :delete, class: "btn btn-sm btn-danger" %>
+        <%= link_to 'حذف', tweet_path(tweet), method: :delete, class: "btn btn-sm btn-danger" %>
         <% end %>
     </div>
     <div class="card-body"><%= raw(tweet.content_html) %></div>

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:index]
   before_action :set_user, only: %i[show followers following]
 
   def index
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
     @activities = PublicActivity::Activity.where(owner: @user).or(PublicActivity::Activity.where(recipient: @user)).distinct.order(created_at: :desc)
 
     @tweet = Tweet.new
+    @tweets = @user.tweets.order(created_at: :desc).limit(20)
   end
 
   def followers
