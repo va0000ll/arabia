@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
       comment.user = current_user
     end
     @comment.save!
+    @comment.create_activity key: 'comment.created', owner: current_user, recipient: @commentable.user
   end
 
   def destroy

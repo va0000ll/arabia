@@ -42,6 +42,8 @@
                             <%= link_to activity.owner.username, user_path(activity.owner.username) %>
                             <span>تابع</span>
                             <%= link_to activity.recipient.username, user_path(activity.recipient.username) %>
+                        <% when 'Comment' %>
+                          <%= link_to activity.owner.username, user_path(activity.owner) %> رد على تغريدة
                         <% end %>
                         </p>
                     </div>
