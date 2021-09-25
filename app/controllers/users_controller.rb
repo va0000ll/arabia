@@ -16,7 +16,8 @@ class UsersController < ApplicationController
     @activities = PublicActivity::Activity.where(owner: @user).or(PublicActivity::Activity.where(recipient: @user)).distinct.order(created_at: :desc)
 
     @tweet = Tweet.new
-    @tweets = @user.tweets.order(created_at: :desc).limit(20)
+    @tweets = @user.retweets + @user.tweets
+    @tweets.sort_by!(&:created_at).reverse!
   end
 
   def followers
