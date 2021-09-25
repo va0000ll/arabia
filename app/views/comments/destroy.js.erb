@@ -1,0 +1,3 @@
+$('#comment-<%= @comment.id %>').remove()
+c_count = $('#comments-<%= @comment.commentable.id %>-count').text()
+$('#comments-<%= @comment.commentable.id %>-count').text(parseInt(c_count) - 1)

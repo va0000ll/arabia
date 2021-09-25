@@ -16,7 +16,7 @@ class Comment < ActiveRecord::Base
     AutoHtml::SimpleFormat.new
   )
 
-  def content=(c)
+  def comment=(c)
     super(c)
     self[:comment] = FORMAT.call(c)
   end

@@ -25,6 +25,12 @@
                             <% case activity.key when 'tweet.created' %>
                                 <%= raw(activity.trackable.content_html) %>
                                 <%= render 'tweets/like_and_dislike_button', tweet: activity.trackable %>
+                                <hr>
+                                <%= render 'comments/form', tweet: activity.trackable %>
+                                <br>
+                                <div id="comments-<%= activity.trackable.id %>">
+                                  <%= render activity.trackable.comments.reverse %>
+                                </div>
                             <% when 'tweet.like' %>
                             <%= link_to activity.owner.username, user_path(activity.owner) %>
                             <span>أعجبته تغريدة</span>

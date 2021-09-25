@@ -1,0 +1,4 @@
+$('#comments-<%= @comment.commentable.id %>').prepend('<%= j render @comment %>')
+c_count = $('#comments-<%= @comment.commentable.id %>-count').text()
+$('#comments-<%= @comment.commentable.id %>-count').text(parseInt(c_count) + 1)
+$('.tweet-<%= @comment.commentable.id %> #comment_text').val('')

@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
       comment.comment = params[:comment_text]
       comment.user = current_user
     end
-    @comment.save
+    @comment.save!
   end
 
   def destroy
