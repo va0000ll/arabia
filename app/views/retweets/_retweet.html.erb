@@ -10,7 +10,7 @@
         <span><%= retweet.source_tweet.user.username %></span>
         <span>غرد</span>
         <%= content_tag :time, '', class: 'timeago', datetime: retweet.source_tweet.created_at.localtime %>
-        <% if user_signed_in? && current_user == @user %>
+        <% if user_signed_in? && current_user == retweet.source_tweet.user %>
         <%= link_to 'تعديل', edit_tweet_path(retweet.source_tweet), class: "btn btn-sm btn-primary" %>
         <span>|</span>
         <%= link_to 'حذف', tweet_path(retweet.source_tweet), method: :delete, class: "btn btn-sm btn-danger" %>

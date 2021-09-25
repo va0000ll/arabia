@@ -31,4 +31,11 @@ class User < ApplicationRecord
   def following?(user)
     following.include? user
   end
+
+  def self.mentions(letters)
+    return User.none unless letters.present?
+
+    mentions = User.where('username LIKE ?', "%#{letters}%").limit(8)
+    mentions.map { |u| { name: u.username } }
+  end
 end

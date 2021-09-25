@@ -1,0 +1,8 @@
+<% if activity.trackable %>
+ <li class="list-group-item">
+ <span>ذكر</span> 
+ <%= link_to activity.recipient.username, user_path(activity.recipient) %>
+ <span>فى تغريدة</span>
+ <%= content_tag :time, '', class: 'timeago', datetime: activity.trackable.created_at.localtime %>
+ </li>
+<% end %>
