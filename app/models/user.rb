@@ -15,6 +15,7 @@ class User < ApplicationRecord
 
   has_many :tweets, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :retweets, dependent: :destroy, foreign_key: 'retweeter_id'
 
   validates_presence_of :username
   validates_uniqueness_of :username
