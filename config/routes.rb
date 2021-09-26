@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :relationships, only: %i[create destroy]
 
   get 'pages/timeline'
+  post :notifications, to: 'notifications#mark_all_readed'
 
   resources :tweets, only: %i[create edit update destroy]
   resources :likes, only: %i[create destroy], param: 'likeable_id'

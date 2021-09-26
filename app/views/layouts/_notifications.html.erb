@@ -1,0 +1,28 @@
+<li class="nav-item dropdown">
+  <%= link_to notifications_path, class: 'nav-link dropdown-toggle', 'data-toggle': 'dropdown', remote: true, method: :post do %>
+  <%= content_tag :span, 'الإشعارات' %>
+  <%= content_tag :span, @notifications.size, class: 'badge badge-danger notifications-count' unless @notifications.size.zero? %>
+  <% end %>
+
+  <div class="dropdown-menu dropdown-menu-right" arial-labledby="navbarDropdown">
+    <% @notifications.each do |notification| %>
+        <% case notification.trackable_type %>
+        <% when 'Tweet' %>
+            <% case notification.key %>
+            <% when 'tweet.liked' %>
+               <a href="#" class="dropdown-item"><%= notification.owner.username %> أعجبته تغريدتك</a>
+            <% when 'tweet.disliked' %>
+               <a href="#" class="dropdown-item"><%= notification.owner.username %> لم تعجبه تغريدتك</a>
+            <% when 'tweet.mention' %>
+               <a href="#" class="dropdown-item"><%= notification.owner.username %> ذكرك فى تغريدة</a>
+            <% end %>
+        <% when 'Relationship' %>
+            <a href="#" class="dropdown-item">تابعك <%= notification.owner.username %></a>
+        <% when 'Comment' %>
+            <a href="#" class="dropdown-item"><%= notification.owner.username %> علق على تغريدتك</a>
+        <% when 'Retweet' %>
+            <a href="#" class="dropdown-item"><%= notification.owner.username %> قام باعادة تغريد تغريدتك</a>
+        <% end %>
+    <% end %>
+  </div>
+</li>

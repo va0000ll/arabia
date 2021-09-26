@@ -26,5 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
             return $.getJSON('/users.json', {q: text}, cb)
         }
     });
-    tribute.attach(document.getElementById("tweet_content"));
+    if(document.getElementById("tweet_content")){
+        tribute.attach(document.getElementById("tweet_content"));
+    }
 });
