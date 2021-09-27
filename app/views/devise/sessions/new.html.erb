@@ -11,11 +11,13 @@
                 label: 'كلمة السر',
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, label: 'تذكرني', as: :boolean if devise_mapping.rememberable? %>
+    <% if devise_mapping.rememberable? %>
+      <%= f.input :remember_me, label: 'تذكرني', as: :boolean, input_html: {class: 'custom-control-input'}, label_html: {class: 'custom-control-label'}, wrapper_html: {class: 'custom-control custom-checkbox'} %>
+    <% end %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "تسجيل الدخول" %>
+  <div class="form-actions mb-3">
+    <%= f.button :submit, "تسجيل الدخول", class: 'btn btn-light' %>
   </div>
 <% end %>
 

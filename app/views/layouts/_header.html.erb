@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <%= link_to root_path, class: 'navbar-brand' do %>
-    <%= 'شبكة عربي' %>
+    <i class="fa fa-twitter"></i>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,19 +8,17 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav d-flex flex-row-reverse ml-auto">
+    <ul class="navbar-nav d-flex ml-auto">
       <% if user_signed_in? %>
         
         <%= link_to root_path, class: 'nav-link' do %>
+          <%= content_tag :i, '', class: 'fa fa-home' %>
           <%= content_tag :span, 'الرئيسية' %>
         <% end %>
 
         <%= link_to tweeters_path, class: 'nav-link' do %>
+          <%= content_tag :i, '', class: 'fa fa-users' %>
           <%= content_tag :span, 'المغردون' %>
-        <% end %>
-
-        <%= link_to root_path, class: 'nav-link' do %>
-          <%= content_tag :span, 'الحائط' %>
         <% end %>
         <%= render 'layouts/notifications' %>
       <% end %>
@@ -34,14 +32,17 @@
 
           <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
             <%= link_to(user_path(current_user.username), class: 'dropdown-item') do %>
+              <%= content_tag :i, '', class: 'fa fa-user-circle' %>
               <%= 'الصفحة الشخصية' %>
             <% end %>
 
             <%= link_to edit_user_registration_path, class: 'dropdown-item' do %>
+              <%= content_tag :i, '', class: 'fa fa-sliders' %>
               <%=  'الاعدادات' %>
             <% end %>
             <div class="dropdown-divider"></div>
             <%= link_to destroy_user_session_path, method: :delete, class: 'dropdown-item' do %>
+              <%= content_tag :i, '', class: 'fa fa-sign-out' %>
               <%= 'تسجيل الخروج' %>
             <% end %>
           </div>

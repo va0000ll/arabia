@@ -1,5 +1,6 @@
 <li class="nav-item dropdown">
-  <%= link_to notifications_path, class: 'nav-link dropdown-toggle', 'data-toggle': 'dropdown', remote: true, method: :post do %>
+  <%= link_to notifications_path, class: 'nav-link', 'data-toggle': 'dropdown', remote: true, method: :post do %>
+  <%= content_tag :i, '', class: 'fa fa-bell' %>
   <%= content_tag :span, 'الإشعارات' %>
   <%= content_tag :span, @notifications.size, class: 'badge badge-danger notifications-count' unless @notifications.size.zero? %>
   <% end %>

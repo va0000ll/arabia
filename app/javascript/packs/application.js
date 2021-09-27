@@ -10,6 +10,7 @@ require('@popperjs/core/dist/umd/popper-lite');
 require('bootstrap/dist/js/bootstrap.bundle');
 require('arabic-timeago');
 import Tribute from "tributejs";
+import 'font-awesome/scss/font-awesome';
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
